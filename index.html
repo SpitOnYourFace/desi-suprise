@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За Десислава ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Задаваме снимката като фон */
+            background-image: url('./image_1.jpg');
+            background-size: cover;   /* Разпъва снимката да покрие целия екран */
+            background-position: center; /* Центрира снимката */
+            background-repeat: no-repeat; /* Снимката не се повтаря */
+            
+            color: #5a3a22; /* Шоколадово кафяво за текст */
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Добавяме лек тъмен филтър върху снимката, за да се чете текста по-добре */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.2); /* Лек черен нюанс с 20% прозрачност */
+            z-index: 1;
+        }
+
+        /* Ефект за падащ сняг на заден план */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff; /* Смених цвета на бял, за да се вижда по-добре на снимката */
+            font-size: 1em;
+            font-family: Arial;
+            text-shadow: 0 0 5px #000; /* Лека сянка за контраст */
+            animation-name: fall;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            z-index: 2; /* Снегът е над фона, но под кутията с текст */
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+
+        /* Кутията за съдържание */
+        .card {
+            /* Малко по-прозрачен фон, за да прозира снимката отдолу */
+            background: rgba(255, 255, 255, 0.85); 
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0, 0.3);
+            border: 2px solid #c0392b;
+            max-width: 600px;
+            position: relative;
+            z-index: 10; /* Най-отпред */
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: #c0392b; /* Коледно червено */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        /* Бутонът */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #c0392b;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 5px 15px rgba(192, 57, 43, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #a93226;
+            transform: scale(1.05);
+        }
+
+        /* Курабийките по ъглите */
+        .cookie {
+            position: fixed;
+            font-size: 4em;
+            z-index: 11; /* Над всичко */
+            pointer-events: none;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Сянка, за да изпъкват */
+        }
+        .top-left { top: 20px; left: 20px; transform: rotate(-15deg); }
+        .top-right { top: 20px; right: 20px; transform: rotate(15deg); }
+        .bottom-left { bottom: 20px; left: 20px; transform: rotate(15deg); }
+        .bottom-right { bottom: 20px; right: 20px; transform: rotate(-15deg); }
+
+    </style>
+</head>
+<body>
+
+    <div class="cookie top-left">🍪</div>
+    <div class="cookie top-right">🍪</div>
+    <div class="cookie bottom-left">🍪</div>
+    <div class="cookie bottom-right">🍪</div>
+
+    <div class="snowflake" style="left: 10%; animation-duration: 12s;">❄</div>
+    <div class="snowflake" style="left: 20%; animation-duration: 15s;">❅</div>
+    <div class="snowflake" style="left: 50%; animation-duration: 10s;">❄</div>
+    <div class="snowflake" style="left: 70%; animation-duration: 14s;">❅</div>
+    <div class="snowflake" style="left: 90%; animation-duration: 11s;">❄</div>
+
+    <div class="card">
+        <h1>На моята Десислава</h1>
+        <p>
+            Любов моя! <br>
+            Исках да направя нещо специално за теб, за да ти напомня колко много те ценя и обичам.
+            Ти правиш света ми по-уютен и по-красив.
+        </p>
+        <p>Обичам те безкрайно! ❤️</p>
+        
+        <a href="suprise.html" class="btn">Имам още нещо за теб...</a>
+    </div>
+
+</body>
+</html>

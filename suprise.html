@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изненада!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* Снимката за фон */
+            background-image: url('bed_roses.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            color: #5a3a22;
+            font-family: 'Lora', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Тъмен филтър, за да изпъкне централната част */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .container {
+            /* Бял полупрозрачен фон, за да се чете текста върху розите */
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            border: 2px solid #c0392b;
+            position: relative;
+            z-index: 10; /* Над фона */
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
+            color: #c0392b;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        .message {
+            font-size: 1.8em;
+            font-style: italic;
+            border-top: 2px solid #c0392b;
+            border-bottom: 2px solid #c0392b;
+            padding: 30px 0;
+            margin: 20px 0;
+        }
+
+        .emoji-big {
+            font-size: 3em;
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* Курабийки */
+        .cookie {
+            position: fixed;
+            font-size: 4em;
+            z-index: 11;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .top-left { top: 20px; left: 20px; }
+        .top-right { top: 20px; right: 20px; }
+        .bottom-left { bottom: 20px; left: 20px; }
+        .bottom-right { bottom: 20px; right: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="cookie top-left">🍪</div>
+    <div class="cookie top-right">🍪</div>
+    <div class="cookie bottom-left">🍪</div>
+    <div class="cookie bottom-right">🍪</div>
+
+    <div class="container">
+        <h1>Специална мисия:</h1>
+        
+        <div class="message">
+            "Като направиш пилешката супичка,<br>
+            те чакам в нас да те гушкам...<br>
+            и още нещо ;)"
+            <span class="emoji-big">🥣🌹🔥😈</span>
+        </div>
+
+        <p style="font-size: 1.2em; color: #555;">(Чакам те с нетърпение!)</p>
+    </div>
+
+</body>
+</html>
