@@ -9,23 +9,21 @@
         body {
             margin: 0;
             padding: 0;
-            /* Снимката за фон */
             background-image: url('bed_roses.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
             color: #5a3a22;
             font-family: 'Lora', serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
             position: relative;
+            overflow: hidden; /* Да не скролва заради курабийките */
         }
 
-        /* Тъмен филтър, за да изпъкне централната част */
         body::before {
             content: '';
             position: absolute;
@@ -35,16 +33,17 @@
         }
 
         .container {
-            /* Бял полупрозрачен фон, за да се чете текста върху розите */
             background: rgba(255, 255, 255, 0.9);
             max-width: 700px;
+            width: 90%;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 0 25px rgba(0,0,0,0.5);
             border: 2px solid #c0392b;
             position: relative;
-            z-index: 10; /* Над фона */
+            z-index: 10;
             animation: fadeIn 2s ease-in;
+            margin: 20px;
         }
 
         @keyframes fadeIn {
@@ -58,6 +57,7 @@
             color: #c0392b;
             margin-bottom: 20px;
             margin-top: 0;
+            line-height: 1.2;
         }
 
         .message {
@@ -75,17 +75,43 @@
             display: block;
         }
 
-        /* Курабийки */
         .cookie {
             position: fixed;
             font-size: 4em;
             z-index: 11;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            pointer-events: none;
         }
         .top-left { top: 20px; left: 20px; }
         .top-right { top: 20px; right: 20px; }
         .bottom-left { bottom: 20px; left: 20px; }
         .bottom-right { bottom: 20px; right: 20px; }
+
+        /* --- АДАПТАЦИЯ ЗА МОБИЛНИ УСТРОЙСТВА --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            .message {
+                font-size: 1.3em; /* По-малък текст */
+                padding: 20px 0;
+            }
+            .container {
+                padding: 20px;
+                width: 85%;
+            }
+            .emoji-big {
+                font-size: 2em;
+            }
+            /* Намаляваме курабийките драстично на телефон */
+            .cookie {
+                font-size: 1.8em;
+            }
+            .top-left { top: 10px; left: 10px; }
+            .top-right { top: 10px; right: 10px; }
+            .bottom-left { bottom: 10px; left: 10px; }
+            .bottom-right { bottom: 10px; right: 10px; }
+        }
     </style>
 </head>
 <body>
